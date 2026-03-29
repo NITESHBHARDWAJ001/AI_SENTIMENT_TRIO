@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #0e1117;
+  --bg-secondary: #10151d;
+  --bg-card: #161b22;
+  --border: #2b3442;
+  --accent-primary: #58a6ff;
+  --accent-secondary: #58a6ff;
+  --positive: #00c853;
+  --negative: #ff5252;
+  --neutral: #ffd166;
+  --text-main: #e6edf3;
+  --text-muted: #9ba7b4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(88, 166, 255, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 82%, rgba(88, 166, 255, 0.08), transparent 38%),
+    radial-gradient(circle at 50% 50%, rgba(22, 27, 34, 0.18), transparent 52%),
+    var(--bg-main);
+  color: var(--text-main);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(155, 167, 180, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 167, 180, 0.045) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(circle at 50% 50%, black 15%, transparent 85%);
+  opacity: 0.15;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.35);
+}
+
+.neon-text {
+  text-shadow: 0 0 0 transparent;
+}
+
+.neon-glow {
+  box-shadow: 0 0 0 1px rgba(88, 166, 255, 0.18), 0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+/* Shared row micro-interaction for data tables. */
+.interactive-row {
+  transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.interactive-row:hover {
+  background-color: rgba(88, 166, 255, 0.08);
+  transform: translateX(2px);
+}
+
+.interactive-row:focus-within {
+  background-color: rgba(88, 166, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(88, 166, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  body::before {
+    background-size: 28px 28px;
+    opacity: 0.1;
+  }
+
+  .interactive-row:hover {
+    transform: translateX(0);
+  }
+}
