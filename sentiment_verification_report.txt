@@ -1,0 +1,116 @@
+================================================================================
+SENTIMENT CALCULATION VERIFICATION REPORT
+================================================================================
+
+FINAL DATASET SUMMARY (data/processed/{ticker}_final.csv)
+--------------------------------------------------------------------------------
+Total rows across all tickers:         7,490
+Rows with REAL sentiment (from news):  0 (0.0%)
+Rows with DEFAULT sentiment (no news): 7,490 (100.0%)
+Rows missing sentiment:                0 (0.0%)
+Rows with INVALID sentiment (out of range): 0
+
+SENTIMENT CALCULATION BY TICKER
+--------------------------------------------------------------------------------
+Ticker                  Total     Real  Default  Missing   Coverage    Mean Sent
+--------------------------------------------------------------------------------
+TSLA                      501        0      501        0       0.0%       0.0000
+AAPL                      501        0      501        0       0.0%       0.0000
+MSFT                      501        0      501        0       0.0%       0.0000
+GOOGL                     501        0      501        0       0.0%       0.0000
+AMZN                      501        0      501        0       0.0%       0.0000
+NVDA                      501        0      501        0       0.0%       0.0000
+META                      501        0      501        0       0.0%       0.0000
+JPM                       501        0      501        0       0.0%       0.0000
+XOM                       501        0      501        0       0.0%       0.0000
+WMT                       501        0      501        0       0.0%       0.0000
+RELIANCE.NS               496        0      496        0       0.0%       0.0000
+TCS.NS                    496        0      496        0       0.0%       0.0000
+INFY.NS                   496        0      496        0       0.0%       0.0000
+HDFCBANK.NS               496        0      496        0       0.0%       0.0000
+ICICIBANK.NS              496        0      496        0       0.0%       0.0000
+
+SENTIMENT DISTRIBUTION ANALYSIS
+--------------------------------------------------------------------------------
+TSLA                
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+AAPL                
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+MSFT                
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+GOOGL               
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+AMZN                
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+NVDA                
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+META                
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+JPM                 
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+XOM                 
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+WMT                 
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+RELIANCE.NS         
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+TCS.NS              
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+INFY.NS             
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+HDFCBANK.NS         
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+ICICIBANK.NS        
+  Range:   [0.0000, 0.0000]
+  Mean:    0.0000 ± 0.0000
+  Sample:  [0.0, 0.0, 0.0, 0.0, 0.0]
+
+RAW NEWS DATA (data/processed/rss_cleaned.csv)
+--------------------------------------------------------------------------------
+Total articles:                        909
+Articles with sentiment:               0
+Articles missing sentiment:            909
+Mapping distribution:                  {'Direct': 478, 'Domain': 431}
+Top mapped tickers:                    {'GOOGL': 148, 'TSLA': 90, 'TCS.NS': 77, 'RELIANCE.NS': 69, 'MSFT': 66}
+
+ISSUES & RECOMMENDATIONS
+--------------------------------------------------------------------------------
+
+RSS Data Issues:
+  ⚠ Found 909 articles still marked as PENDING
+
+⚠ NO NEWS-BACKED SENTIMENT: 0% of rows have sentiment from news articles
+  This might indicate:
+    - News fetch failed
+    - Sentiment computation failed
+    - No recent news within lookback window
+
+================================================================================
